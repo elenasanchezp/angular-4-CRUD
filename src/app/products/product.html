@@ -1,0 +1,40 @@
+<p>Product List</p>
+
+<table class="table table-hover">
+  <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Actions</th>
+  		</tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+			<button class="btn btn-info">
+				<i class="fa fa-edit"></i>
+			</button>
+			<button class="btn btn-danger">
+				<i class="fa fa-minus"></i>
+			</button>
+          </td>
+        </tr>
+    </tbody>
+</table>
+
+<form>
+	<h2>Product Details</h2>
+	<p>ID: <input type="text" name="id"/></p>
+	<p>Name: <input type="text" name="name"/></p>
+	<p>Description: <input type="text" name="description"/></p>
+	<p>Price: <input type="text" name="price"/></p>
+
+	<button type="button" class="btn btn-primary">Submit</button>
+	<button type="button" class="btn btn-primary">Cancel</button>
+</form>
