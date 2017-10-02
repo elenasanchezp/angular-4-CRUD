@@ -17,12 +17,12 @@
           <td>{{ product.description }}</td>
           <td>{{ product.price }}</td>
           <td>
-			<button class="btn btn-info" (click)="showEditProductForm(product)">
-				<i class="fa fa-edit"></i>
-			</button>
-			<button class="btn btn-danger">
-				<i class="fa fa-minus"></i>
-			</button>
+        			<button class="btn btn-info" (click)="showEditProductForm(product)">
+        				<i class="fa fa-edit"></i>
+        			</button>
+        			<button class="btn btn-danger" (click)="removeProduct(product)">
+        				<i class="fa fa-minus"></i>
+        			</button>
           </td>
         </tr>
     </tbody>
@@ -31,11 +31,21 @@
 <button class="btn btn-success" (click)="showAddProductForm()"><i class="fa fa-plus"></i></button>
 
 <form *ngIf="productForm">
-	<h2>Product Details</h2>
+	<h2>Add New Product</h2>
 	<p>ID: <input type="text" name="id" [(ngModel)]="newProduct.id"/></p>
 	<p>Name: <input type="text" name="name" [(ngModel)]="newProduct.name"/></p>
 	<p>Description: <input type="text" name="description" [(ngModel)]="newProduct.description"/></p>
 	<p>Price: <input type="text" name="price" [(ngModel)]="newProduct.price"/></p>
 	<button type="button" class="btn btn-primary" (click)="saveProduct(newProduct)">Submit</button>
-	<button type="button" class="btn btn-primary">Cancel</button>
+	<button type="button" class="btn btn-warning">Cancel</button>
+</form>
+
+<form *ngIf="editProductForm">
+  <h2>Edit Product Details</h2>
+  <p>ID: <input type="text" name="id" [(ngModel)]="editedProduct.id"/></p>
+  <p>Name: <input type="text" name="name" [(ngModel)]="editedProduct.name"/></p>
+  <p>Description: <input type="text" name="description" [(ngModel)]="editedProduct.description"/></p>
+  <p>Price: <input type="text" name="price" [(ngModel)]="editedProduct.price"/></p>
+  <button type="button" class="btn btn-primary" (click)="updateProduct(editedProduct)">Submit</button>
+  <button type="button" class="btn btn-warning" (click)="cancelUpdateProduct()">Cancel</button>
 </form>
