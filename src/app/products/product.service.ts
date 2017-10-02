@@ -1,8 +1,20 @@
 import { Injectable } from '@angular/core'; 
 import { Product }  from './product';
+import { PRODUCT_ITEMS } from './product-data';
 
 @Injectable() 
 export class ProductService {
+	
+	private pItems = PRODUCT_ITEMS; 
+
+	getProductsFromData():  Product[] {
+		return this.pItems;
+	}
+
+	addProduct(product: Product) {
+		this.pItems.push(product);
+	}
+	/*
 	getProductsFromService(): Product[] {
 	return [{
 		id: 1, 
@@ -17,4 +29,5 @@ export class ProductService {
 		price: 10.99
 	}]
 	}
+	*/
 }

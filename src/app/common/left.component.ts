@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './left.component.html',
 })
 export class LeftComponent  { 
-	title: string = "News";
-	items: Array<string> = ["Item 1", "Item 2"];
+	title: string = "Left Component";
+	items: Array<string> = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"];
 }

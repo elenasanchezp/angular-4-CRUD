@@ -19,7 +19,7 @@ import { ProductService }  from './products/product.service';
 @NgModule({
   imports:      [ 
   					BrowserModule, 
-  					//FormModule
+  					FormsModule
   				],
   declarations: [ 
   					AppComponent,
